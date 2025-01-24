@@ -2,10 +2,10 @@ diff --git a/backend/settings.py b/backend/settings.py
 index aed51e6..9e03c28 100644
 --- a/backend/settings.py
 +++ b/backend/settings.py
-@@ -16,6 +16,7 @@ GUI_CONFIG_DEFAULTS = {
-     "hide_playback_device": False,
-     "applyConfigAutomatically": False,
+@@ -26,6 +26,7 @@ GUI_CONFIG_DEFAULTS = {
      "status_update_interval": 100,
+     "volume_range": 50,
+     "volume_max": 0,
 +    "hide_file_manager": False,
  }
 

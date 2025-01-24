@@ -3,6 +3,7 @@ camilla_host: "0.0.0.0"
 camilla_port: 1234
 bind_address: "0.0.0.0"
 port: 15000
+gui_config_file: ./config/gui-config.yml
 config_dir: "/usr/share/camilladsp/configs"
 coeff_dir: "/usr/share/camilladsp/coeffs"
 default_config: "/usr/share/camilladsp/working_config.yml"
@@ -12,3 +13,5 @@ backup_camilla_port: 1235
 log_file: "/var/log/mpd/log"
 active_config_txt: "/usr/share/camilladsp/active_config.txt"
 statefile_path: "/var/lib/cdsp/statefile.yml"
+on_set_active_config: /var/www/util/moode_selectactivecdspconfig.py set {}
+on_get_active_config: /var/www/util/moode_selectactivecdspconfig.py get

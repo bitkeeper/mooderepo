@@ -2,31 +2,31 @@ diff --git a/src/guiconfig.ts b/src/guiconfig.ts
 index 90b5b2f..a368297 100644
 --- a/src/guiconfig.ts
 +++ b/src/guiconfig.ts
-@@ -4,6 +4,7 @@ export interface GuiConfig {
-     hide_capture_device: boolean
+@@ -8,6 +8,7 @@ export interface GuiConfig {
      hide_playback_device: boolean
      hide_rate_monitoring: boolean
+     hide_multithreading: boolean
 +    hide_file_manager: boolean
      coeff_dir: string
- }
-
-@@ -21,6 +22,7 @@ export function defaultGuiConfig(): GuiConfig {
-         hide_capture_device: false,
+     supported_capture_types?: CaptureType[]
+     supported_playback_types?: PlaybackType[]
+@@ -53,6 +53,7 @@ export function defaultGuiConfig(): GuiConfig {
          hide_playback_device: false,
          hide_rate_monitoring: false,
+         hide_multithreading: false,
 +        hide_file_manager: false,
          coeff_dir: '',
-     }
- }
+         apply_config_automatically: false,
+         save_config_automatically: false,
 \ No newline at end of file
 diff --git a/src/index.tsx b/src/index.tsx
 index 45f51e0..0a43b29 100644
 --- a/src/index.tsx
 +++ b/src/index.tsx
-@@ -259,7 +259,8 @@ class CamillaConfig extends React.Component<
-           <Tab>Filters {errors({path: ['filters'], includeChildren: true}) && <ErrorIcon/>}</Tab>
-           <Tab>Mixers {errors({path: ['mixers'], includeChildren: true}) && <ErrorIcon/>}</Tab>
-           <Tab>Pipeline {errors({path: ['pipeline'], includeChildren: true}) && <ErrorIcon/>}</Tab>
+@@ -305,7 +305,8 @@ class CamillaConfig extends React.Component<
+           <Tab>Mixers {errors.hasErrorsFor('mixers') && <ErrorIcon/>}</Tab>
+           <Tab>Processors {errors.hasErrorsFor('processors') && <ErrorIcon/>}</Tab>
+           <Tab>Pipeline {errors.hasErrorsFor('pipeline') && <ErrorIcon/>}</Tab>
 -          <Tab>Files</Tab>
 +          {this.state.guiConfig.hide_file_manager===false &&
 +          <Tab>Files</Tab>}

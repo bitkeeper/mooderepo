@@ -1,14 +1,5 @@
 --- camilladsp-0.6.3/Cargo.toml.org	2022-04-10 12:01:05.380529460 +0200
 +++ camilladsp-0.6.3/Cargo.toml	2022-04-10 12:22:20.474806161 +0200
-@@ -5,6 +5,8 @@
- edition = "2021"
- description = "A flexible tool for processing audio"
- rust-version = "1.61"
-+readme = "README.md"
-+license-file = "LICENSE.txt"
-
- [features]
- default = ["websocket"]
 @@ -90,3 +92,13 @@
 
  [profile.release]

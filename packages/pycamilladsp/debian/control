@@ -21,4 +21,4 @@ Depends:
  ${python3:Depends},
  ${misc:Depends},
 Description: Python library for communicating with CamillaDSP (Python 3)
- Companion Python library for CamillaDSP. Works with CamillaDSP version 2.0.0 and up.
+ Companion Python library for CamillaDSP. Works with CamillaDSP version 3.0.0 and up.

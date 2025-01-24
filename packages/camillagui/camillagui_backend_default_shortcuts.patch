@@ -1,8 +1,8 @@
 --- "a/backend/settings.py"	2024-09-27 17:19:31.929703636 +0200
 +++ "b/backend/settings.py"	2024-09-27 17:19:40.308576905 +0200
-@@ -23,7 +23,8 @@
-     "save_config_automatically": False,
-     "status_update_interval": 100,
+@@ -28,7 +28,8 @@
+     "volume_range": 50,
+     "volume_max": 0,
      "hide_file_manager": False,
 +    "custom_shortcuts": []
  }

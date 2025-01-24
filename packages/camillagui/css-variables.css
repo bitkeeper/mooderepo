@@ -1,7 +1,7 @@
 /* Dark skin. */
 .css-variables-disabled {
 
-    /*
+   /*
       Styling is only supported using the following CSS variables.
       They will be maintained in a backwards-compatible manner as good as possible.
       It is technically possible to add any valid CSS to this file,
@@ -39,7 +39,8 @@
     --disabled-button-background-color: var(--button-background-color);
     --disabled-button-border: var(--button-border);
     --highlighted-button-background-color: #242;
-    --highlighted-button-border: 2px solid #4b4;
+    --highlighted-button-border-color: #4b4;
+    --highlighted-button-border: 2px solid var(--highlighted-button-border-color);
 
     /* Links */
     --link-color: #77f;
@@ -60,9 +61,13 @@
     --impulse-color: #32CD32;
     --groupdelay-color: #ffa010;
 
+    /* Mixer matrix */
+    --muted-cell-color: #909090;
+    --normal-cell-color: #70ff70;
+    --inverted-cell-color: #9090ff;
+
     /* Pipeline plot */
-    --arrow-color: var(--axes-color);
-    --arrow-width: 3px;
+    --arrow-colors: #1f77b4, #ff7f0e, #2ca02c, #d62728, #9467bd, #8c564b, #e377c2, #7f7f7f, #bcbd22, #17becf;
     --frame-background-color: #333;
     --block-background-color: rgb(200, 200, 200);
     --disabled-block-background-color: rgb(120, 120, 120);
@@ -76,7 +81,7 @@
 */
 .css-variables-disabled {
 
-    /* General */
+/* General */
     --background-color: white;
     --text-color: black;
     --error-text-color: #f00;
@@ -100,7 +105,8 @@
     --disabled-button-background-color: #aaa;
     --disabled-button-border: var(--button-border);
     --highlighted-button-background-color: #cfc;
-    --highlighted-button-border: var(--button-border);
+    --highlighted-button-border-color: var(--button-border);
+    --highlighted-button-border: 2px solid var(--highlighted-button-border-color);
 
     /* Links */
     --link-color: #44f;
@@ -121,11 +127,12 @@
     --impulse-color: rgba(220,0,0,1);
 
     /* Pipeline plot */
-    --arrow-color: var(--text-color);
-    --arrow-width: 3px;
+    --arrow-colors: #1f77b4, #ff7f0e, #2ca02c, #d62728, #9467bd, #8c564b, #e377c2, #7f7f7f, #bcbd22, #17becf;
     --frame-background-color: rgb(180, 180, 180);
     --block-background-color: rgb(233, 233, 233);
+    --disabled-block-background-color: rgb(100, 100, 100);
     --block-text-color: rgb(16, 10, 90);
+    --disabled-block-text-color: rgb(0, 0, 0);
 }
 
 /* moOde Style */
@@ -180,9 +187,13 @@
     --impulse-color: #32CD32;
     --groupdelay-color: #ffa010;
 
+    /* Mixer matrix */
+    --muted-cell-color: #909090;
+    --normal-cell-color: #70ff70;
+    --inverted-cell-color: #9090ff;
+
     /* Pipeline plot */
-    --arrow-color: var(--axes-color);
-    --arrow-width: 3px;
+    --arrow-colors: #1f77b4, #ff7f0e, #2ca02c, #d62728, #9467bd, #8c564b, #e377c2, #7f7f7f, #bcbd22, #17becf;
     --frame-background-color: #333;
     --block-background-color: rgb(200, 200, 200);
     --disabled-block-background-color: rgb(120, 120, 120);

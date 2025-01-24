@@ -10,13 +10,14 @@
 
 . ../../scripts/rebuilder.lib.sh
 
-PKG="camillagui_2.1.0-1moode2"
+PKG="camillagui_3.0.0-1moode2"
 
 PKG_SOURCE_GIT="https://github.com/HEnquist/camillagui.git"
-PKG_SOURCE_GIT_TAG="v2.1.0"
+PKG_SOURCE_GIT_TAG="v3.0.0"
+# PKG_SOURCE_GIT_TAG="mixer_matrix"
 
 PKG_SOURCE_GIT_BACKEND="https://github.com/HEnquist/camillagui-backend.git"
-PKG_SOURCE_GIT_TAG_BACKEND="v2.1.1"
+PKG_SOURCE_GIT_TAG_BACKEND="v3.0.0"
 
 # gui is a react app
 rbl_check_build_dep npm
@@ -38,13 +39,21 @@ echo "build root : $BUILD_ROOT_DIR"
 
 # add option to hide files tab on expert mode:
 rbl_patch $BASE_DIR/camillagui_hide_files.patch
-rbl_patch $BASE_DIR/camillagui_remove_quick_config.patch
+# rbl_patch $BASE_DIR/camillagui_remove_quick_config.patch
 # installing npm deps with npm ci failed, so use npm install instead
-# npm ci
+
 npm install
-npm install react-scripts
-# npx browserslist@latest --update-db
-npm run-script build
+npx browserslist@latest --update-db
+
+npm run-script build --force
+if [[ ! $? -eq 0 ]]
+then
+    echo "${RED} Error: npm build  failed.${NORMAL}"
+    cd ..
+    exit 1
+else
+    echo "${GREEN} npm build is ok.${NORMAL}"
+fi
 cd ..
 
 # ---------------------------------------------------------------
